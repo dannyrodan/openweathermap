@@ -1,27 +1,36 @@
 app = angular.module 'open-weather', []
 
-app.controller 'city1Controller', ->
+app.controller 'city1Controller', ['$http', ($http) ->
   this.city = undefined
-  this.getData = (city)->
-    $.ajax
-      url: "http://api.openweathermap.org/data/2.5/weather"
-      dataType: 'json'
-      data:
-        q: city
-        APPID: ""
-    .done (data)->
-        this.name = city
-        this.temperature = data.main.temp
+  stored_city = this
+  this.getData = (city) ->
+    getWeather($http, city, stored_city)
   undefined
+]
 
-app.controller 'city2Controller', ->
-  this.weatherData = weatherData
+app.controller 'city2Controller', ['$http', ($http) ->
+  this.city = undefined
+  stored_city = this
+  this.getData = (city) ->
+    getWeather($http, city, stored_city)
   undefined
+]
 
-app.controller 'city3Controller', ->
-  this.weatherData = weatherData
+app.controller 'city3Controller', ['$http', ($http) ->
+  this.city = undefined
+  stored_city = this
+  this.getData = (city) ->
+    getWeather($http, city, stored_city)
   undefined
+]
 
 weatherData =
   name: 'San Fran Florida',
   temperature: '70 degress'
+
+  
+getWeather = (service, city, stored_city) ->
+  service.get("http://api.openweathermap.org/data/2.5/weather", {params: {q: city, APPID: "dff97a586b33bfeb217ac171a722c96b"}})
+  .success( (result) ->
+    stored_city.city = result
+  )
