@@ -3,6 +3,10 @@
   
   app.controller('city1Controller', function(){
     this.weatherData = weatherData;
+    
+    this.getData = function(city){
+      
+    };
   });
   
   app.controller('city2Controller', function(){
