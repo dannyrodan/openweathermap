@@ -8,3 +8,6 @@ This application requires an internet connection to connect to retrieve data fro
 
 ## How to run it
 Open index.html from your web browser. Enter a city, in any of the forms and submit the data to see the current weather.
+
+## Live Site
+http://vell.x10host.com/openweathermap/
