@@ -11,6 +11,15 @@
       <p>By: Lovell McIlwain</p>
     </div>
 
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Overview</h3>
+      </div>
+      <div class="panel-body">
+        This is a basic AngularJS site.  This site uses the <a href="http://openweathermap.org" target='_blank'>openweathermap</a> api to retrieve weather information for a given city.
+      </div>
+    </div>
+              
     <div class='row' ng-controller='city1Controller as city1Ctrl'>
       <div class='col-md-4'>
         <h3>City 1: {{city1Ctrl.city || city1Ctrl.current_city.name}}</h3>
