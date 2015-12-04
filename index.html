@@ -7,14 +7,15 @@
   </head>
   <body class='container'>
     <div class='page-header'>
-      <h1>Open Weather Map</h1>
+      <h1 class='animated rollIn'>Open Weather Map Data Retriever</h1>
+      <p>By: Lovell McIlwain</p>
     </div>
 
     <div class='row' ng-controller='city1Controller as city1Ctrl'>
       <div class='col-md-4'>
         <h3>City 1: {{city1Ctrl.city || city1Ctrl.current_city.name}}</h3>
-        <form name='cityForm1' ng-submit='cityForm1.$valid && city1Ctrl.getData(city1Ctrl.city)'>
-          <div class='form-group'>
+        <form name='cityForm1' ng-submit='cityForm1.$valid && city1Ctrl.getData(city1Ctrl.city)' class='animated zoomIn'>
+          <div class='form-group well'>
             <input type="text" class="form-control" id="city1" placeholder="Enter City Name" ng-model='city1Ctrl.city'  required autofocus><br />
             <button type="submit" class="btn btn-default btn-sm" ng-click='cityForm1.$setPristine()'>Submit</button>
           </div>
@@ -27,9 +28,9 @@
       </div>
       
       <div class='col-md-4' ng-controller='city2Controller as city2Ctrl'>
-        <form name='cityForm2' ng-submit='cityForm2.$valid && city2Ctrl.getData(city2Ctrl.city)'>
+        <form name='cityForm2' ng-submit='cityForm2.$valid && city2Ctrl.getData(city2Ctrl.city)'  class='animated zoomIn'>
           <h3>City 2: {{city2Ctrl.city || city2Ctrl.current_city.name}}</h3>
-          <div class='form-group'>
+          <div class='form-group well'>
             <input type="text" class="form-control" id="city2" placeholder="Enter City Name" ng-model='city2Ctrl.city' required><br />
             <button type="submit" class="btn btn-default btn-sm">Submit</button>
           </div>
@@ -42,9 +43,9 @@
       </div>
       
       <div class='col-md-4' ng-controller='city3Controller as city3Ctrl'>
-        <form name='cityForm3' ng-submit='cityForm3.$valid && city3Ctrl.getData(city3Ctrl.city)'>
+        <form name='cityForm3' ng-submit='cityForm3.$valid && city3Ctrl.getData(city3Ctrl.city)'  class='animated zoomIn'>
           <h3>City 3: {{city3Ctrl.city || city3Ctrl.current_city.name}}</h3>
-          <div class='form-group'>
+          <div class='form-group well'>
             <input type="text" class="form-control" id="city3" placeholder="Enter City Name" ng-model='city3Ctrl.city' required><br />
             <button type="submit" class="btn btn-default btn-sm">Submit</button>
           </div>
